@@ -1,0 +1,13 @@
+repositories:
+  remote:
+   - http://repo1.maven.org/maven2
+
+artifacts:
+  javax_servlet: org.apache.geronimo.specs:geronimo-servlet_3.0_spec:jar:1.0
+  javax_annotation: com.google.code.findbugs:jsr305:jar:2.0.1
+  gwt_user: com.google.gwt:gwt-user:jar:2.5.1
+  gwt_dev: com.google.gwt:gwt-dev:jar:2.5.1
+
+  gwt_appcache_client: org.realityforge.gwt.appcache:gwt-appcache-client:jar:0.5-21-ge27f8ca
+  gwt_appcache_linker: org.realityforge.gwt.appcache:gwt-appcache-linker:jar:0.5-21-ge27f8ca
+  gwt_appcache_server: org.realityforge.gwt.appcache:gwt-appcache-server:jar:0.5-21-ge27f8ca
