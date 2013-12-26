@@ -115,8 +115,8 @@ public final class Example
       }
 
       {
-        final Button button2 = new Button( "Request removal of cache" );
-        button2.addClickHandler( new ClickHandler()
+        final Button button = new Button( "Request removal of cache" );
+        button.addClickHandler( new ClickHandler()
         {
           @Override
           public void onClick( final ClickEvent event )
@@ -124,12 +124,12 @@ public final class Example
             cache.removeCache();
           }
         } );
-        panel.add( button2 );
+        panel.add( button );
       }
 
       {
-        final Button button3 = new Button( "Request cache swap" );
-        button3.addClickHandler( new ClickHandler()
+        final Button button = new Button( "Request cache swap" );
+        button.addClickHandler( new ClickHandler()
         {
           @Override
           public void onClick( final ClickEvent event )
@@ -137,11 +137,11 @@ public final class Example
             cache.swapCache();
           }
         } );
-        panel.add( button3 );
+        panel.add( button );
       }
       {
-        final Button button4 = new Button( "Show image from cache" );
-        button4.addClickHandler( new ClickHandler()
+        final Button button = new Button( "Show image from cache" );
+        button.addClickHandler( new ClickHandler()
         {
           @Override
           public void onClick( final ClickEvent event )
@@ -149,7 +149,7 @@ public final class Example
             panel.add( new Image( GWT.getModuleBaseURL() + "bonsai tree.jpg" ) );
           }
         } );
-        panel.add( button4 );
+        panel.add( button );
       }
       panel.add( textPanel );
       RootPanel.get().add( panel );
