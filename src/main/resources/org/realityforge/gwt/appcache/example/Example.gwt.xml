@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='example'>
+  <inherits name='com.google.gwt.user.User'/>
+  <inherits name="org.realityforge.gwt.appcache.Appcache"/>
+  <inherits name="org.realityforge.gwt.appcache.linker.Linker"/>
+  <add-linker name="xsiframe"/>
+
+  <entry-point class='org.realityforge.gwt.appcache.example.client.Example'/>
+
+  <source path='client'/>
+  <source path='shared'/>
+
+  <add-linker name="appcache"/>
+
+  <extend-configuration-property name="appcache_static_files" value="./"/>
+  <extend-configuration-property name="appcache_static_files" value="index.html"/>
+
+</module>
