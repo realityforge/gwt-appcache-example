@@ -99,27 +99,44 @@ public final class Example
           appendText( textPanel, "UpdateReady", "green" );
         }
       } );
+      {
+        final Button button = new Button( "Request cache update" );
+        button.addClickHandler( new ClickHandler()
+        {
+          @Override
+          public void onClick( final ClickEvent event )
+          {
+            cache.update();
+          }
+        } );
+        panel.add( button );
+      }
 
-      final Button button = new Button( "Request cache update" );
-      button.addClickHandler( new ClickHandler()
       {
-        @Override
-        public void onClick( final ClickEvent event )
+        final Button button2 = new Button( "Request removal of cache" );
+        button2.addClickHandler( new ClickHandler()
         {
-          cache.update();
-        }
-      } );
-      panel.add( button );
-      final Button button2 = new Button( "Request removal of cache" );
-      button2.addClickHandler( new ClickHandler()
+          @Override
+          public void onClick( final ClickEvent event )
+          {
+            cache.removeCache();
+          }
+        } );
+        panel.add( button2 );
+      }
+
       {
-        @Override
-        public void onClick( final ClickEvent event )
+        final Button button3 = new Button( "Request cache swap" );
+        button3.addClickHandler( new ClickHandler()
         {
-          cache.removeCache();
-        }
-      } );
-      panel.add( button2 );
+          @Override
+          public void onClick( final ClickEvent event )
+          {
+            cache.swapCache();
+          }
+        } );
+        panel.add( button3 );
+      }
       panel.add( textPanel );
       RootPanel.get().add( panel );
     }
