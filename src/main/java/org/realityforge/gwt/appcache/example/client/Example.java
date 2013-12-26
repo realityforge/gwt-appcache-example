@@ -1,10 +1,12 @@
 package org.realityforge.gwt.appcache.example.client;
 
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.InlineHTML;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -136,6 +138,18 @@ public final class Example
           }
         } );
         panel.add( button3 );
+      }
+      {
+        final Button button4 = new Button( "Show image" );
+        button4.addClickHandler( new ClickHandler()
+        {
+          @Override
+          public void onClick( final ClickEvent event )
+          {
+            panel.add( new Image( GWT.getModuleBaseURL() + "bonsai tree.jpg" ) );
+          }
+        } );
+        panel.add( button4 );
       }
       panel.add( textPanel );
       RootPanel.get().add( panel );
