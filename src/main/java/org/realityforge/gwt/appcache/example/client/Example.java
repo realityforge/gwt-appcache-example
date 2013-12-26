@@ -140,7 +140,7 @@ public final class Example
         panel.add( button3 );
       }
       {
-        final Button button4 = new Button( "Show image" );
+        final Button button4 = new Button( "Show image from cache" );
         button4.addClickHandler( new ClickHandler()
         {
           @Override
