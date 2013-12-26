@@ -8,6 +8,6 @@ artifacts:
   gwt_user: com.google.gwt:gwt-user:jar:2.5.1
   gwt_dev: com.google.gwt:gwt-dev:jar:2.5.1
 
-  gwt_appcache_client: org.realityforge.gwt.appcache:gwt-appcache-client:jar:0.5-21-ge27f8ca
-  gwt_appcache_linker: org.realityforge.gwt.appcache:gwt-appcache-linker:jar:0.5-21-ge27f8ca
-  gwt_appcache_server: org.realityforge.gwt.appcache:gwt-appcache-server:jar:0.5-21-ge27f8ca
+  gwt_appcache_client: org.realityforge.gwt.appcache:gwt-appcache-client:jar:0.5-22-g358fff2
+  gwt_appcache_linker: org.realityforge.gwt.appcache:gwt-appcache-linker:jar:0.5-22-g358fff2
+  gwt_appcache_server: org.realityforge.gwt.appcache:gwt-appcache-server:jar:0.5-22-g358fff2
