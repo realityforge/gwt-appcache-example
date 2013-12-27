@@ -108,7 +108,7 @@ public final class Example
           @Override
           public void onClick( final ClickEvent event )
           {
-            cache.update();
+            cache.requestUpdate();
           }
         } );
         panel.add( button );
