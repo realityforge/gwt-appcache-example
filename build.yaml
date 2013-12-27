@@ -8,6 +8,9 @@ artifacts:
   gwt_user: com.google.gwt:gwt-user:jar:2.5.1
   gwt_dev: com.google.gwt:gwt-dev:jar:2.5.1
 
+  javax_validation: javax.validation:validation-api:jar:1.0.0.GA
+  javax_validation_sources: javax.validation:validation-api:jar:sources:1.0.0.GA
+
   gwt_appcache_client: org.realityforge.gwt.appcache:gwt-appcache-client:jar:0.6
   gwt_appcache_linker: org.realityforge.gwt.appcache:gwt-appcache-linker:jar:0.6
   gwt_appcache_server: org.realityforge.gwt.appcache:gwt-appcache-server:jar:0.6

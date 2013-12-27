@@ -17,10 +17,12 @@ define 'gwt-appcache-example' do
 
   gwt_superdev_runner("org.realityforge.gwt.appcache.example.FootprintsDev",
                       :java_args => ["-Xms512M", "-Xmx1024M", "-XX:PermSize=128M", "-XX:MaxPermSize=256M"],
-                      :draft_compile => (ENV["FAST_GWT"] == 'true'))
+                      :draft_compile => (ENV["FAST_GWT"] == 'true'),
+                      :dependencies => [:javax_validation, :javax_validation_sources] + project.compile.dependencies)
   gwt(["org.realityforge.gwt.appcache.example.Example"],
       :java_args => ["-Xms512M", "-Xmx1024M", "-XX:PermSize=128M", "-XX:MaxPermSize=256M"],
-      :draft_compile => (ENV["FAST_GWT"] == 'true'))
+      :draft_compile => (ENV["FAST_GWT"] == 'true'),
+      :dependencies => [:javax_validation, :javax_validation_sources] + project.compile.dependencies)
 
   package(:war)
 
