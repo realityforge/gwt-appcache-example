@@ -90,7 +90,14 @@ public final class Example
         @Override
         public void onProgressEvent( @Nonnull final ProgressEvent event )
         {
-          appendText( textPanel, "Progress[" + event.getLoaded() + " of " + event.getTotal() + "]", "orange" );
+          if ( event.isLengthComputable() )
+          {
+            appendText( textPanel, "Progress[" + event.getLoaded() + " of " + event.getTotal() + "]", "orange" );
+          }
+          else
+          {
+            appendText( textPanel, "Progress", "orange" );
+          }
         }
       } );
       cache.addUpdateReadyHandler( new UpdateReadyEvent.Handler()
