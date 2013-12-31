@@ -39,5 +39,5 @@ define 'gwt-appcache-example' do
                                 :build_on_make => true,
                                 :enable_gwt => true,
                                 :enable_war => true,
-                                :dependencies => [project, :gwt_appcache_server])
+                                :dependencies => [project, :gwt_cache_filter, :gwt_appcache_server])
 end
