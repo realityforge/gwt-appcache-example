@@ -146,6 +146,22 @@ public final class Example
         } );
         panel.add( button );
       }
+      /*
+      // Functionality that will be present in 0.8 version of the library
+      {
+        final Button button = new Button( "Abort cache download" );
+        button.addClickHandler( new ClickHandler()
+        {
+          @Override
+          public void onClick( final ClickEvent event )
+          {
+            cache.abort();
+          }
+        } );
+        panel.add( button );
+      }
+      */
+
       {
         final Button button = new Button( "Show image from cache" );
         button.addClickHandler( new ClickHandler()
