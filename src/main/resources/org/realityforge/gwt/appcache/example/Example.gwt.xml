@@ -14,5 +14,4 @@
 
   <extend-configuration-property name="appcache_static_files" value="./"/>
   <extend-configuration-property name="appcache_static_files" value="index.html"/>
-
 </module>
