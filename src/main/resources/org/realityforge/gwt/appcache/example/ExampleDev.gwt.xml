@@ -6,6 +6,4 @@
   <collapse-all-properties/>
 
   <set-configuration-property name="devModeRedirectEnabled" value="true"/>
-  <!--  enable source maps -->
-  <set-property name="compiler.useSourceMaps" value="true"/>
 </module>
