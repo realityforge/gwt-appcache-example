@@ -28,8 +28,7 @@ define 'gwt-appcache-example' do
 
   clean { rm_rf "#{File.dirname(__FILE__)}/artifacts" }
 
-  iml.add_gwt_facet({'org.realityforge.gwt.appcache.example.ExampleDev' => true,
-                     'org.realityforge.gwt.appcache.example.Example' => false},
+  iml.add_gwt_facet({'org.realityforge.gwt.appcache.example.Example' => true},
                     :settings => {:compilerMaxHeapSize => "1024"})
 
   iml.add_web_facet

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module rename-to='example'>
-  <inherits name='org.realityforge.gwt.appcache.example.Example'/>
-
-  <!-- Compile a single permutation for all platforms -->
-  <collapse-all-properties/>
-
-  <set-configuration-property name="devModeRedirectEnabled" value="true"/>
-</module>
