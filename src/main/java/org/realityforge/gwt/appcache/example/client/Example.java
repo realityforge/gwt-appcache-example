@@ -28,7 +28,7 @@ public final class Example
   public void onModuleLoad()
   {
     final VerticalPanel panel = new VerticalPanel();
-    final ApplicationCache cache = ApplicationCache.get();
+    final ApplicationCache cache = ApplicationCache.getApplicationCacheIfSupported();
     if ( null == cache )
     {
       Window.alert( "ApplicationCache not available!" );
