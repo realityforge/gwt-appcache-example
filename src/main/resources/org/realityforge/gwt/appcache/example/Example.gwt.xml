@@ -14,4 +14,5 @@
 
   <extend-configuration-property name="appcache_static_files" value="./"/>
   <extend-configuration-property name="appcache_static_files" value="index.html"/>
+  <extend-configuration-property name="appcache_fallback_files" value="time offline_time.txt"/>
 </module>

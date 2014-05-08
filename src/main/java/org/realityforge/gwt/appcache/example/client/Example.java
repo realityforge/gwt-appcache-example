@@ -4,11 +4,17 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.http.client.Request;
+import com.google.gwt.http.client.RequestBuilder;
+import com.google.gwt.http.client.RequestCallback;
+import com.google.gwt.http.client.RequestException;
+import com.google.gwt.http.client.Response;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.InlineHTML;
 import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import javax.annotation.Nonnull;
 import org.realityforge.gwt.appcache.client.ApplicationCache;
@@ -171,6 +177,48 @@ public final class Example
         } );
         panel.add( button );
       }
+
+      {
+        final Button button = new Button( "Show time with fallback when offline" );
+        button.addClickHandler( new ClickHandler()
+        {
+          @Override
+          public void onClick( final ClickEvent event )
+          {
+            final RequestBuilder requestBuilder =
+              new RequestBuilder( RequestBuilder.GET, GWT.getModuleBaseURL() + "../time" );
+            try
+            {
+              requestBuilder.sendRequest( "", new RequestCallback()
+              {
+                @Override
+                public void onResponseReceived( final Request request, final Response response )
+                {
+                  final TextArea textArea = new TextArea();
+                  textArea.setText( "Response Received: " + response.getText() );
+                  panel.add( textArea );
+                }
+
+                @Override
+                public void onError( final Request request, final Throwable exception )
+                {
+                  final TextArea textArea = new TextArea();
+                  textArea.setText( "Error requesting resource: " + exception );
+                  panel.add( textArea );
+                }
+              } );
+            }
+            catch ( final RequestException exception )
+            {
+              final TextArea textArea = new TextArea();
+              textArea.setText( "Error requesting resource: " + exception );
+              panel.add( textArea );
+            }
+          }
+        } );
+        panel.add( button );
+      }
+
       panel.add( textPanel );
       RootPanel.get().add( panel );
     }
