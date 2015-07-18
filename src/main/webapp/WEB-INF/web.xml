@@ -16,4 +16,15 @@
         <servlet-name>manifestServlet</servlet-name>
         <url-pattern>/example.appcache</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>timeServlet</servlet-name>
+        <servlet-class>org.realityforge.gwt.appcache.example.server.TimeServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>timeServlet</servlet-name>
+        <url-pattern>/time</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
