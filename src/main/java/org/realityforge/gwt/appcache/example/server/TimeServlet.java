@@ -17,6 +17,6 @@ public class TimeServlet
     throws ServletException, IOException
   {
     response.setStatus( HttpServletResponse.SC_OK );
-    response.getOutputStream().write( new Date().toString().getBytes() );
+    response.getOutputStream().println(new Date().toString());
   }
 }

@@ -16,7 +16,6 @@ import com.google.gwt.user.client.ui.InlineHTML;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.VerticalPanel;
-import javax.annotation.Nonnull;
 import org.realityforge.gwt.appcache.client.ApplicationCache;
 import org.realityforge.gwt.appcache.client.event.CachedEvent;
 import org.realityforge.gwt.appcache.client.event.CachedEvent.Handler;
@@ -45,56 +44,56 @@ public final class Example
 
       cache.addCachedHandler( new Handler()
       {
-        @Override
-        public void onCachedEvent( @Nonnull final CachedEvent event )
+        
+        public void onCachedEvent(  final CachedEvent event )
         {
           appendText( textPanel, "Cached", "blue" );
         }
       } );
       cache.addCheckingHandler( new CheckingEvent.Handler()
       {
-        @Override
-        public void onCheckingEvent( @Nonnull final CheckingEvent event )
+        
+        public void onCheckingEvent(  final CheckingEvent event )
         {
           appendText( textPanel, "Checking", "yellow" );
         }
       } );
       cache.addDownloadingHandler( new DownloadingEvent.Handler()
       {
-        @Override
-        public void onDownloadingEvent( @Nonnull final DownloadingEvent event )
+        
+        public void onDownloadingEvent(  final DownloadingEvent event )
         {
           appendText( textPanel, "Downloading", "orange" );
         }
       } );
       cache.addErrorHandler( new ErrorEvent.Handler()
       {
-        @Override
-        public void onErrorEvent( @Nonnull final ErrorEvent event )
+        
+        public void onErrorEvent(  final ErrorEvent event )
         {
           appendText( textPanel, "Error", "red" );
         }
       } );
       cache.addNoUpdateHandler( new NoUpdateEvent.Handler()
       {
-        @Override
-        public void onNoUpdateEvent( @Nonnull final NoUpdateEvent event )
+        
+        public void onNoUpdateEvent(  final NoUpdateEvent event )
         {
           appendText( textPanel, "NoUpdate", "green" );
         }
       } );
       cache.addObsoleteHandler( new ObsoleteEvent.Handler()
       {
-        @Override
-        public void onObsoleteEvent( @Nonnull final ObsoleteEvent event )
+        
+        public void onObsoleteEvent(  final ObsoleteEvent event )
         {
           appendText( textPanel, "Obsolete", "yellow" );
         }
       } );
       cache.addProgressHandler( new ProgressEvent.Handler()
       {
-        @Override
-        public void onProgressEvent( @Nonnull final ProgressEvent event )
+        
+        public void onProgressEvent(  final ProgressEvent event )
         {
           if ( event.isLengthComputable() )
           {
@@ -108,8 +107,8 @@ public final class Example
       } );
       cache.addUpdateReadyHandler( new UpdateReadyEvent.Handler()
       {
-        @Override
-        public void onUpdateReadyEvent( @Nonnull final UpdateReadyEvent event )
+        
+        public void onUpdateReadyEvent(  final UpdateReadyEvent event )
         {
           appendText( textPanel, "UpdateReady", "green" );
         }
@@ -118,7 +117,7 @@ public final class Example
         final Button button = new Button( "Request cache update" );
         button.addClickHandler( new ClickHandler()
         {
-          @Override
+          
           public void onClick( final ClickEvent event )
           {
             cache.requestUpdate();
@@ -131,7 +130,7 @@ public final class Example
         final Button button = new Button( "Request removal of cache" );
         button.addClickHandler( new ClickHandler()
         {
-          @Override
+          
           public void onClick( final ClickEvent event )
           {
             cache.removeCache();
@@ -144,7 +143,7 @@ public final class Example
         final Button button = new Button( "Request cache swap" );
         button.addClickHandler( new ClickHandler()
         {
-          @Override
+          
           public void onClick( final ClickEvent event )
           {
             cache.swapCache();
@@ -156,7 +155,7 @@ public final class Example
         final Button button = new Button( "Abort cache download" );
         button.addClickHandler( new ClickHandler()
         {
-          @Override
+          
           public void onClick( final ClickEvent event )
           {
             cache.abort();
@@ -169,7 +168,7 @@ public final class Example
         final Button button = new Button( "Show image from cache" );
         button.addClickHandler( new ClickHandler()
         {
-          @Override
+          
           public void onClick( final ClickEvent event )
           {
             panel.add( new Image( GWT.getModuleBaseURL() + "bonsai tree.jpg" ) );
@@ -182,7 +181,7 @@ public final class Example
         final Button button = new Button( "Show time with fallback when offline" );
         button.addClickHandler( new ClickHandler()
         {
-          @Override
+          
           public void onClick( final ClickEvent event )
           {
             final RequestBuilder requestBuilder =
@@ -191,7 +190,7 @@ public final class Example
             {
               requestBuilder.sendRequest( "", new RequestCallback()
               {
-                @Override
+                
                 public void onResponseReceived( final Request request, final Response response )
                 {
                   final TextArea textArea = new TextArea();
@@ -199,7 +198,7 @@ public final class Example
                   panel.add( textArea );
                 }
 
-                @Override
+                
                 public void onError( final Request request, final Throwable exception )
                 {
                   final TextArea textArea = new TextArea();
