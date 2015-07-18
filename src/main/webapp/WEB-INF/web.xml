@@ -6,4 +6,14 @@
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
+
+
+    <servlet>
+        <servlet-name>manifestServlet</servlet-name>
+        <servlet-class>org.realityforge.gwt.appcache.example.server.ManifestServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manifestServlet</servlet-name>
+        <url-pattern>/example.appcache</url-pattern>
+    </servlet-mapping>
 </web-app>
