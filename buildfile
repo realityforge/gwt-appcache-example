@@ -12,7 +12,7 @@ define 'gwt-appcache-example' do
   compile.with :gwt_appcache_server,
                :gwt_appcache_linker,
                :gwt_appcache_client,
-               :javax_servlet,
+               :javax_javaee,
                :gwt_user,
                :gwt_dev
 
