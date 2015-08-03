@@ -18,11 +18,11 @@ define 'gwt-appcache-example' do
                COMPILE_DEPS
 
   gwt_superdev_runner('org.realityforge.gwt.appcache.example.Example',
-                      :java_args => ['-Xms512M', '-Xmx1024M', '-XX:PermSize=128M', '-XX:MaxPermSize=256M'],
+                      :java_args => %w(-Xms512M -Xmx1024M -XX:PermSize=128M -XX:MaxPermSize=256M),
                       :draft_compile => (ENV['FAST_GWT'] == 'true'),
                       :dependencies => [:javax_validation, :javax_validation_sources] + project.compile.dependencies)
   gwt_dir = gwt(['org.realityforge.gwt.appcache.example.Example'],
-                :java_args => ['-Xms512M', '-Xmx1024M', '-XX:PermSize=128M', '-XX:MaxPermSize=256M'],
+                :java_args => %w(-Xms512M -Xmx1024M -XX:PermSize=128M -XX:MaxPermSize=256M),
                 :draft_compile => (ENV['FAST_GWT'] == 'true'),
                 :dependencies => [:javax_validation, :javax_validation_sources] + project.compile.dependencies)
 
