@@ -1,6 +1,10 @@
 require 'buildr/git_auto_version'
 require 'buildr/gwt'
 
+PROVIDED_DEPS = [:javax_javaee]
+COMPILE_DEPS = [:gwt_appcache_linker, :gwt_appcache_client, :gwt_user]
+PACKAGED_DEPS = [:gwt_servlet, :gwt_cache_filter, :gwt_appcache_server]
+
 desc "A simple application demonstrating the use of the gwt-appcache library"
 define 'gwt-appcache-example' do
   project.group = 'org.realityforge.gwt.appcache.example'
@@ -9,12 +13,9 @@ define 'gwt-appcache-example' do
   compile.options.target = '1.7'
   compile.options.lint = 'all'
 
-  compile.with :gwt_appcache_server,
-               :gwt_appcache_linker,
-               :gwt_appcache_client,
-               :javax_javaee,
-               :gwt_user,
-               :gwt_dev
+  compile.with PROVIDED_DEPS,
+               PACKAGED_DEPS,
+               COMPILE_DEPS
 
   gwt_superdev_runner("org.realityforge.gwt.appcache.example.Example",
                       :java_args => ["-Xms512M", "-Xmx1024M", "-XX:PermSize=128M", "-XX:MaxPermSize=256M"],
@@ -25,7 +26,12 @@ define 'gwt-appcache-example' do
                 :draft_compile => (ENV["FAST_GWT"] == 'true'),
                 :dependencies => [:javax_validation, :javax_validation_sources] + project.compile.dependencies)
 
-  package(:war)
+  package(:jar)
+  package(:war).tap do |war|
+    war.libs.clear
+    war.libs << artifacts(PACKAGED_DEPS)
+    war.include assets.to_s, :as => '.'
+  end
 
   clean { rm_rf "#{File.dirname(__FILE__)}/artifacts" }
 
@@ -44,5 +50,5 @@ define 'gwt-appcache-example' do
                                 :build_on_make => true,
                                 :enable_gwt => true,
                                 :enable_war => true,
-                                :dependencies => [project, :gwt_cache_filter, :gwt_appcache_server])
+                                :dependencies => [project, :gwt_servlet, :gwt_cache_filter, :gwt_appcache_server])
 end
