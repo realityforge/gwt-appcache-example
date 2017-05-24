@@ -1,7 +1,7 @@
 require 'buildr/git_auto_version'
 require 'buildr/gwt'
 
-PROVIDED_DEPS = [:javax_javaee]
+PROVIDED_DEPS = [:javax_javaee, :javax_annotation]
 COMPILE_DEPS = [:gwt_appcache_linker, :gwt_appcache_client, :gwt_user]
 PACKAGED_DEPS = [:gwt_servlet, :gwt_cache_filter, :gwt_appcache_server]
 
