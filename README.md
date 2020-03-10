@@ -1,3 +1,7 @@
+> Project Archived: [gwt-appcache](https://github.com/realityforge/gwt-appcache) has been archived so example can also be archived.
+
+---
+
 gwt-appcache-example
 ====================
 
